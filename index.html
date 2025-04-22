@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFood</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- header y navbar -->
+    <header>
+      <!-- display: comportamiento de un elemento, flex: tipo de elemento
+      -->
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- logo -->
+            <div class="d-flex align-items-center">
+                <img src="assets/img/logo.PNG" alt="Logo EcoFood" width="50" height="60">
+                <h1>EcoFood</h1>
+            </div>
+            <!-- login  -->
+            <div>
+                <a href="login.html" class="btn btn-outline-success me-2">Iniciar Sesión</a>
+                <a href="registro.html" class="btn btn-success">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+  <!-- navbar -->
+  <!-- container fluid significa q usa todo el tamaño de la pantalla sin importar el dispositivo -->
+  <nav class="navbar navbar-expand-md border-top border-bottom">
+    <div class="container-fluid">
+      <ul class="navbar-nav flex-row flex-wrap justify-content-around w-100">
+        <li class="nav-item"><a class="nav-link" href="#quienes-somos">¿Quiénes Somos?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#que-hacemos">¿Qué Hacemos?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#vision">Visión</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mision">Misión</a></li>
+        <li class="nav-item"><a class="nav-link" href="#comentarios">Comentarios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- contenido principal -->
+  <main class="container my-4">
+    
+    <!-- quiénes somos -->
+    <!-- mb-5 para ajustar el margen-->
+    <section id="quienes-somos" class="mb-5">
+      <h2>¿Quiénes Somos?</h2>
+      <p>EcoFood es una organización comprometida con la reducción del desperdicio alimentario mediante iniciativas educativas, tecnológicas y prácticas cotidianas. 
+        Somos un equipo diverso formado por expertos en medio ambiente, tecnología y desarrollo comunitario, unidos por un propósito común: generar conciencia, 
+        educar y activar soluciones para enfrentar este desafío global.
+      </p>
+      <img src="assets/img/quienesomos.jpg" alt="Imagen representativa" class="img-fluid rounded img-ajustada">
+    </section>
+
+    <!-- qué hacemos -->
+    <section id="que-hacemos" class="mb-5">
+      <h2>¿Qué Hacemos?</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <img src="assets/img/educamos.jpg" class="img-fluid rounded img-quehacemos" alt="Educamos">
+          <h3 class="h5 mt-2">Educamos</h3>
+          <p>Ofrecemos materiales educativos gratuitos y talleres comunitarios para fomentar prácticas sostenibles en el consumo de alimentos.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <img src="assets/img/conectamos.jpg" class="img-fluid rounded img-quehacemos" alt="Conectamos">
+          <h3 class="h5 mt-2">Conectamos</h3>
+          <p>Promovemos alianzas entre productores, comerciantes, consumidores y comunidades para reducir excedentes 
+            y aprovechar al máximo los alimentos disponibles.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <img src="assets/img/comidafuturista.JPG" class="img-fluid rounded img-quehacemos" alt="Innovamos">
+          <h3 class="h5 mt-2">Innovamos</h3>
+          <p>Utilizamos la tecnología para desarrollar soluciones prácticas, como aplicaciones móviles, 
+            plataformas web y redes comunitarias que faciliten la reducción del desperdicio alimentario.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div>
+      <img src="assets/img/separador2.png" alt="Separador" class="separador-img">
+    </div>
+
+    <section>
+      <div id="vision">
+        <div class="vision-text">
+          <h2>Visión</h2>
+          <p class="justificado">Nuestra visión es un mundo en el cual los alimentos se valoren y aprovechen responsablemente, en donde la seguridad alimentaria esté garantizada para todos y el desperdicio alimentario sea mínimo, generando un impacto positivo significativo en el medio ambiente, la economía y la sociedad.</p>
+        </div>
+        <div class="vision-image">
+          <img src="assets/img/vision.JPG" alt="Visión">
+        </div>
+      </div>
+
+
+    <div id="mision">
+      <div class="mision-text">
+        <h2>Misión</h2>
+        <p class="justificado">Nuestra misión es sensibilizar y movilizar a las comunidades locales y globales sobre la importancia de reducir el desperdicio de alimentos, brindando herramientas prácticas, educativas y tecnológicas que permitan a las personas adoptar hábitos sostenibles y responsables para mejorar la seguridad alimentaria y proteger el medio ambiente.</p>
+      </div>
+      <div class="mision-image">
+        <img src="assets/img/mision.jpg" alt="Misión">
+      </div>
+    </div>
+  </section>
+    <div>
+      <img src="assets/img/separador1.png" alt="Separador" class="separador-img">
+    </div>
+
+    <section id="comentarios" class="mb-5">
+      <h2>Comentarios</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <!-- blockquote es para indicar una cita de otra fuente-->
+          <blockquote class="blockquote">
+            <p>"Un proyecto innovador y con gran potencial..."</p>
+            <footer class="blockquote-footer">Mohamed Amurali</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote class="blockquote">
+            <p>"Creativo, bien ejecutado y con una estética impecable..."</p>
+            <footer class="blockquote-footer">John Pork</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote class="blockquote">
+            <p>"Una idea fresca y original que destaca por su calidad..."</p>
+            <footer class="blockquote-footer">Tim Cheese</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contacto" class="pt-4 border-top">
+    <div class="container"> <h3>Contacto</h3>
+      <p>Dirección: Calle Verde 123, Ciudad Sostenible</p>
+      <p>Email: contacto@ecofood.org</p>
+      <ul>
+        <li>Facebook: @EcoFoodOfficial</li>
+        <li>Instagram: @ecofood_oficial</li>
+        <li>Twitter: @EcoFood_org</li>
+      </ul>
+    </div> 
+  </footer>
+</body>

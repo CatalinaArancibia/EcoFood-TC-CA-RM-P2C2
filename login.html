@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/login.css" />
+  <title>Inicia sesión</title>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Inicio de sesión</h2>
+    <img src="assets/img/logo.PNG" alt="Logo EcoFood" class="logo-ecofood" />
+    <form action="index.html">
+      <div class="input-group">
+        <label for="username">Usuario: </label>
+        <input type="text" id="username" name="username" placeholder="Ingrese usuario" class="formulario" required/>
+      </div>
+      <div class="input-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Ingrese contraseña" class="formulario" required/>
+      </div>
+      <button type="submit" class="btn-login">Entrar</button>
+      <p class="olvide-contrasena">
+        <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+      </p>
+    </form>
+    <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+  </div>
+</body>
+
+</html>

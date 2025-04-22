@@ -1,0 +1,120 @@
+/* fondo*/
+body {
+    background: url(../assets/img/fondito.jpg) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* fondo con blur */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* cajita */
+.login-container {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
+                0 8px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /*para aplicar el desenfoque*/
+    color: #f3f3f3;
+}
+
+/* título*/
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #96a179;
+}
+
+/* logo */
+.logo-ecofood {
+    display: block;
+    margin: 0 auto 30px;
+    max-width: 100px;
+}
+
+/* inputs */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    color: #e4e4e4;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.formulario {
+    height: 55px;
+    padding: 0 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e4e4e4;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.formulario:focus {
+    border-color: #313333;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* botones */
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: #96a179;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer; /*para q cambie el cursor*/
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #5a6049;
+}
+
+/* texto de abajo */
+.login-container p {
+    text-align: center;
+    margin-top: 20px;
+    color: #96a179;
+    font-size: 0.95rem;
+}
+
+.login-container a {
+    color: #96a179;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
