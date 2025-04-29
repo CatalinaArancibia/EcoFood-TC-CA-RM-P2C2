@@ -1,120 +1,69 @@
-/* fondo*/
+/* Estilos para la página de inicio de sesión */
 body {
-    background: url(../assets/img/fondito.jpg) no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+  margin: 0; /* Elimina márgenes adicionales */
+  padding: 0; /* Elimina padding adicional */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../assets/img/FonditoDifuminado.png) no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
 }
 
-/* fondo con blur */
-body::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: -1;
+
+.card {
+  background-color: rgba(248, 245, 233, 0.1) !important; /* Fondo blanco con opacidad */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  max-width: 600px; /* Aumenta el ancho máximo */
+  padding: 3rem; /* Aumenta el relleno interno */
+  border: 1px solid rgba(248, 245, 233, 0.2) !important; /* Borde del card */
+  border-radius: 15px !important;
+  padding: 40px 30px !important;
+  max-width: 500px !important;
+  width: 90% !important;
 }
 
-/* cajita */
-.login-container {
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 40px 30px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
-                0 8px 40px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px); /*para aplicar el desenfoque*/
-    color: #f3f3f3;
+/* Asegura que el texto del botón esté siempre visible */
+.btn-animate {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #526b5c;
+  border: 2px solid #516039;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.3s ease;
+  z-index: 1; /* Asegura que el botón esté en el nivel correcto */
 }
 
-/* título*/
-.login-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #96a179;
+/* Efecto de relleno */
+.btn-animate::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #5a6049;
+  z-index: -1;
+  transition: left 0.3s ease;
 }
 
-/* logo */
-.logo-ecofood {
-    display: block;
-    margin: 0 auto 30px;
-    max-width: 100px;
+/* Animación al pasar el cursor */
+.btn-animate:hover {
+  color: #fff; /* Cambia el color del texto */
 }
 
-/* inputs */
-.input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 25px;
+.btn-animate:hover::before {
+  left: 0; /* Rellena el botón desde la izquierda */
 }
 
-.input-group label {
-    color: #e4e4e4;
-    font-weight: 500;
-    margin-bottom: 8px;
+/* Asegura que el contenido del botón esté por encima del efecto */
+.btn-animate span {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté siempre visible */
 }
 
-.formulario {
-    height: 55px;
-    padding: 0 15px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #e4e4e4;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.formulario:focus {
-    border-color: #313333;
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-}
-
-/* botones */
-.btn-login {
-    width: 100%;
-    padding: 15px;
-    background-color: #96a179;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer; /*para q cambie el cursor*/
-    transition: background-color 0.3s ease;
-}
-
-.btn-login:hover {
-    background-color: #5a6049;
-}
-
-/* texto de abajo */
-.login-container p {
-    text-align: center;
-    margin-top: 20px;
-    color: #96a179;
-    font-size: 0.95rem;
-}
-
-.login-container a {
-    color: #96a179;
-    text-decoration: none;
-}
-
-.login-container a:hover {
-    text-decoration: underline;
+.btn-animate:hover {
+  transform: scale(1.05);
 }
