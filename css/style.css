@@ -8,7 +8,7 @@ header .d-flex img {
     margin-right: 10px;
 }
 
-/* nombre d la empresa */
+/* nombre de la empresa */
 header h1 {
     margin: 0;
     font-size: 2rem; 
@@ -18,37 +18,43 @@ header h1 {
     transition: color 0.3s ease; /* para q cambie de color */
 }
 
-/* botones inicio d sesión y registro */
-header a {
-    padding: 8px 16px;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Estilos base para botones inicio de sesión y registro en general */
+header a,
+button.btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* inicio de sesión */
-header a.btn-outline-success {
-    border: 1px solid #95a078;
-    color: #95a078;
+/* Botón "Iniciar Sesión" estilo outline */
+a.btn-outline-success,
+button.btn-outline-success {
+  border: 1px solid #95a078;
+  color: #95a078;
 }
 
-header a.btn-outline-success:hover {
-    border: 1px solid #5a6049;
-    background-color: #5a6049;
-    color: white;
+a.btn-outline-success:hover,
+button.btn-outline-success:hover {
+  border: 1px solid #5a6049;
+  background-color: #5a6049;
+  color: white;
 }
 
-/* registro */
-header a.btn-success {
-    border: 1px solid #95a078;
-    background-color: #95a078;
-    color: white;
+/* Botón "Registrarse" estilo sólido */
+a.btn-success,
+button.btn-success {
+  border: 1px solid #95a078;
+  background-color: #95a078;
+  color: white;
 }
 
-header a.btn-success:hover {
-    border: 1px solid #95a078;
-    background-color: #5a6049; 
+a.btn-success:hover,
+button.btn-success:hover {
+  border: 1px solid #95a078;
+  background-color: #5a6049;
 }
+
 
 /* cuerpo */
 body {
@@ -273,3 +279,17 @@ footer#contacto ul {
 footer#contacto ul li {
     margin: 0; 
   }
+
+.frase-transparente {
+    background-color: rgba(149, 160, 120, 0.3); /* verde oliva claro con más opacidad */
+    color: #2f331f; /* verde oliva muy oscuro para alta legibilidad */
+    border: 1px solid #5a6049;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* sutil profundidad */
+  }
+  
+  
+
