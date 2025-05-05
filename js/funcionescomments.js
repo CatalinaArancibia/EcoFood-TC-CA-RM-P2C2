@@ -1,6 +1,8 @@
 // crear variable inmutable (array)
 const comments = [
-    { nombreUsuario: "Meowl", textoComentario: "buenos productos jejej:3" }
+    { nombreUsuario: "Meowl", textoComentario: "Los productos llegaron en buen estado y el empaque es ecológico." },
+    { nombreUsuario: "John Pork", textoComentario: "Excelente calidad, se nota el compromiso con la sostenibilidad." },
+    { nombreUsuario: "Mohamed Amurali", textoComentario: "Muy buena iniciativa, ojalá más empresas se sumen a esto." }
 ];
 
 // función para cargar los comentarios dinámicamente
