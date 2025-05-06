@@ -1,13 +1,31 @@
+// Usuario predefinido
+const usuarioPredefinido = {
+  nombre: "Admin",
+  email: "admin@correo.com",
+  password: "admin123"
+};
+
+// Guardar usuario predefinido si no existe aún
+window.addEventListener("DOMContentLoaded", () => {
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  const existe = usuarios.some((u) => u.email === usuarioPredefinido.email);
+  if (!existe) {
+    usuarios.push(usuarioPredefinido);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  }
+});
+
 // Validar formulario de registro
 function validarRegistro(event) {
   event.preventDefault();
 
-  const nombre = document.getElementById("nombre").value.trim(); // Eliminar espacios en blanco al inicio y al final
-  const email = document.getElementById("email").value.trim(); // Eliminar espacios en blanco al inicio y al final
+  const nombre = document.getElementById("nombre").value.trim();
+  const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
   const confirmar = document.getElementById("confirm-password").value;
 
-  limpiarMensajes(); // Limpia mensajes anteriores
+  limpiarMensajes();
 
   let valido = true;
 
@@ -41,17 +59,26 @@ function validarRegistro(event) {
   }
 
   if (valido) {
-    mostrarExito(
-      "formRegistro",
-      "¡Registro exitoso! Redirigiendo a inicio de sesión. Por favor, espere"
-    );
-    // Guardar datos en localStorage (simulando una base de datos)
+    // Guardar el nuevo usuario
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Verificar si ya existe el email
+    const yaExiste = usuarios.some((u) => u.email === email);
+    if (yaExiste) {
+      mostrarError("email", "Este correo ya está registrado");
+      return;
+    }
+
+    usuarios.push({ nombre, email, password });
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    mostrarExito("formRegistro", "¡Registro exitoso! Redirigiendo a inicio de sesión.");
+
     document.getElementById("formRegistro").reset();
 
-    // Redirigir al inicio de sesión después de 1 segundo
     setTimeout(() => {
       window.location.href = "login.html";
-    }, 3000); // 1000 milisegundos = 1 segundo
+    }, 3000);
   }
 }
 
@@ -62,7 +89,7 @@ function validarLogin(event) {
   const email = document.getElementById("emailLogin").value.trim();
   const password = document.getElementById("passwordLogin").value;
 
-  limpiarMensajes(); // Limpia mensajes anteriores
+  limpiarMensajes();
 
   let valido = true;
 
@@ -86,13 +113,22 @@ function validarLogin(event) {
   }
 
   if (valido) {
-    mostrarExito("formLogin", "Inicio de sesión exitoso. Redirigiendo...");
-    document.getElementById("formLogin").reset();
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const usuarioValido = usuarios.find((u) => u.email === email && u.password === password);
 
-    // Redirigir al dashboard o página principal después de 1 segundo
-    setTimeout(() => {
-      window.location.href = "index.html"; //
-    }, 1000); // 1000 milisegundos = 1 segundo
+    if (usuarioValido) {
+      mostrarExito("formLogin", "Inicio de sesión exitoso. Redirigiendo...");
+      document.getElementById("formLogin").reset();
+
+      // Guardar el nombre del usuario logueado (opcional)
+      localStorage.setItem("usuarioActivo", JSON.stringify(usuarioValido));
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1000);
+    } else {
+      mostrarError("emailLogin", "Correo o contraseña incorrectos.");
+    }
   }
 }
 
